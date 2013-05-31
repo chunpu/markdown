@@ -1,0 +1,40 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+.menu-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.menu-list li {
+	padding: 0 10px;
+	float: left;
+}
+.menu {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 30px;
+	z-index: 100;
+	background: #ccc;
+}
+.content {
+	position: absolute;
+	width: 100%;
+	top: 30px;
+}
+.edit {
+	position: absolute;
+	width: 49%;
+	top: 0;
+	padding-right: 4px;
+}
+.preview {
+	position: absolute;
+	top: 0;
+	width: 48%;
+	left: 50%;
+	border-left: 2px solid #ccc;
+	padding-left: 10px;
+}
