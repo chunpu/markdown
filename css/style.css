@@ -29,6 +29,7 @@ html, body {
 	width: 49%;
 	top: 0;
 	padding-right: 4px;
+	min-height: 500px;
 }
 .preview {
 	position: absolute;
@@ -37,4 +38,5 @@ html, body {
 	left: 50%;
 	border-left: 2px solid #ccc;
 	padding-left: 10px;
+	min-height: 800px;
 }
