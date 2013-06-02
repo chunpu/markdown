@@ -17,6 +17,7 @@
 		<ul class="menu-list">
 			<li id="download-md">下载markdown</li>
 			<li>下载html</li>
+			<li><input value="backup1" id="filename"/></li>
 		</ul>
 	</div>
 	<div class="content">
@@ -118,6 +119,9 @@ marked.setOptions({
 });
 var preview = document.getElementById('preview');
 var myedit = document.getElementById('myedit');
+if ('localStorage' in window && 'last' in window.localStorage) {
+	document.getElementById('myedit').value = window.localStorage[window.localStorage.last];
+}
 var editor = CodeMirror.fromTextArea(myedit, {
 	lineNumbers: true,
 	viewportMargin: Infinity,
@@ -131,5 +135,6 @@ editor.on('change', function() {
 })
 </script>
 <script src="js/menu.js"></script>
+<script src="js/key.js"></script>
 </body>
 </html>
