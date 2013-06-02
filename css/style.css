@@ -29,6 +29,10 @@ html, body {
 	width: 49%;
 	top: 0;
 	padding-right: 4px;
+<<<<<<< HEAD
+=======
+	min-height: 500px;
+>>>>>>> gh-pages
 }
 .preview {
 	position: absolute;
@@ -37,4 +41,8 @@ html, body {
 	left: 50%;
 	border-left: 2px solid #ccc;
 	padding-left: 10px;
+<<<<<<< HEAD
+=======
+	min-height: 800px;
+>>>>>>> gh-pages
 }
