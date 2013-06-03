@@ -10,13 +10,14 @@
 	<script src="js/markdown-hl.js"></script>
 	<script src="js/marked.js"></script>
 	<script src="js/highlight.js"></script>
+	<script src="js/base64.js"></script>
 
 </head>
 <body>
 	<div class="menu" >
 		<ul class="menu-list">
-			<li id="download-md">下载markdown</li>
-			<li>下载html</li>
+			<li><a href="data:application/octet-stream;charset=utf-8;base64," download="_" onclick="genMD(this)">下载markdown</a></li>
+			<li><a href="data:application/octet-stream;charset=utf-8;base64," download="_" onclick="genHTML(this)">下载html</a></li>
 			<li><input value="backup1" id="filename"/></li>
 		</ul>
 	</div>
@@ -94,6 +95,18 @@
 		<div id="preview" class="preview markdown">
 		</div>
 	</div>
+	<script type="template" id="template">
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>mytitle</title>
+</head>
+<body>
+	mybody
+</body>
+</html>
+	</script>
 
 <script>
 marked.setOptions({
@@ -117,6 +130,7 @@ marked.setOptions({
     */
   }
 });
+
 var preview = document.getElementById('preview');
 var myedit = document.getElementById('myedit');
 if ('localStorage' in window && 'last' in window.localStorage) {

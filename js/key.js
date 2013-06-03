@@ -10,3 +10,25 @@ document.onkeydown = function(e) {
 		}
 	}
 }
+
+function genMD(a) {
+	var text = editor.getValue();	
+	if (navigator.platform.match('Win')) {
+		console.log(11);
+		text = text.replace(/\n/g, '\r\n');
+	}	
+	text = Base64.encode(text);	
+	a.href += text;
+	var name = document.getElementById('filename').value;
+	a.download = name + '.md';
+}
+
+function genHTML(a) {
+	var text = document.getElementById('preview').innerHTML;
+	var template = document.getElementById('template').innerHTML;
+	var name = document.getElementById('filename').value;
+	var html = template.replace(/mytitle/, name).replace(/mybody/, text);;
+	html = Base64.encode(html);
+	a.href += html;	
+	a.download = name + '.html';
+}
