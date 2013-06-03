@@ -18,7 +18,7 @@ function genMD(a) {
 		text = text.replace(/\n/g, '\r\n');
 	}	
 	text = Base64.encode(text);	
-	a.href += text;
+	a.href = 'data:application/octet-stream;charset=utf-8;base64,' + text;
 	var name = document.getElementById('filename').value;
 	a.download = name + '.md';
 }
@@ -29,6 +29,6 @@ function genHTML(a) {
 	var name = document.getElementById('filename').value;
 	var html = template.replace(/mytitle/, name).replace(/mybody/, text);;
 	html = Base64.encode(html);
-	a.href += html;	
+	a.href = 'data:application/octet-stream;charset=utf-8;base64,' + html;	
 	a.download = name + '.html';
 }
