@@ -2,9 +2,8 @@
 
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
-  font-family: "Consolas" monospace;
-  color: #eee;
-  min-height: 800px;
+  font-family: monospace;
+  min-height: 300px;
 }
 .CodeMirror-scroll {
   /* Set scrolling behaviour here */
@@ -14,7 +13,7 @@
 /* PADDING */
 
 .CodeMirror-lines {
-  padding: 7px 0; /* Vertical padding around content */
+ 
 }
 .CodeMirror pre {
   padding: 0 4px; /* Horizontal padding of content */
@@ -35,7 +34,6 @@
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
   min-width: 20px;
-  line-height: inherit;
   text-align: right;
   color: #999;
 }
@@ -43,7 +41,8 @@
 /* CURSOR */
 
 .CodeMirror div.CodeMirror-cursor {
-  border-left: 1px solid black;
+  border-left: 2px solid green;
+  padding-left: -10px;
   z-index: 3;
 }
 /* Shown when moving in bi-directional text */
@@ -63,38 +62,35 @@
 
 /* DEFAULT THEME */
 
-.cm-s-default .cm-keyword {color: #F92672;}
-.cm-s-default .cm-atom {color: #AE81FF;}
+.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-atom {color: #219;}
 .cm-s-default .cm-number {color: #164;}
 .cm-s-default .cm-def {color: #00f;}
 .cm-s-default .cm-variable {color: black;}
-.cm-s-default .cm-variable-2 {color: rgb(0,128,0)}
-.cm-s-default .cm-variable-3 {}
+.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable-3 {color: #085;}
 .cm-s-default .cm-property {color: black;}
 .cm-s-default .cm-operator {color: black;}
-.cm-s-default .cm-comment {
-  color: rgb(0,128,0);
-  font-family: 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Courier, monospace !important;;
-}
-.cm-s-default .cm-string {color: #00f;}
+.cm-s-default .cm-comment {color: #a50;}
+.cm-s-default .cm-string {color: #a11;}
 .cm-s-default .cm-string-2 {color: #f50;}
 .cm-s-default .cm-meta {color: #555;}
-.cm-s-default .cm-error {}
+.cm-s-default .cm-error {color: #f00;}
 .cm-s-default .cm-qualifier {color: #555;}
 .cm-s-default .cm-builtin {color: #30a;}
 .cm-s-default .cm-bracket {color: #997;}
 .cm-s-default .cm-tag {color: #170;}
 .cm-s-default .cm-attribute {color: #00c;}
-.cm-s-default .cm-header {color: rgb(190, 34, 34);}
+.cm-s-default .cm-header {color: blue;}
 .cm-s-default .cm-quote {color: #090;}
 .cm-s-default .cm-hr {color: #999;}
-.cm-s-default .cm-link {color: #00f;}
+.cm-s-default .cm-link {color: #00c;}
 
 .cm-negative {color: #d44;}
 .cm-positive {color: #292;}
-.cm-header, .cm-strong {font-weight: 500;}
+.cm-header, .cm-strong {font-weight: bold;}
 .cm-em {font-style: italic;}
-.cm-link {}
+.cm-link {text-decoration: underline;}
 
 .cm-invalidchar {color: #f00;}
 
@@ -107,11 +103,10 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
    the editor. You probably shouldn't touch them. */
 
 .CodeMirror {
-  line-height: 1.2;
+
   position: relative;
-  overflow: hidden;
-  background: white;
-  color: black;
+  overflow: hidden;  
+ 
 }
 
 .CodeMirror-scroll {
@@ -138,12 +133,12 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
 .CodeMirror-vscrollbar {
   right: 0; top: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 .CodeMirror-hscrollbar {
   bottom: 0; left: 0;
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 .CodeMirror-scrollbar-filler {
   right: 0; bottom: 0;
@@ -236,7 +231,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
 }
 
 .CodeMirror-selected { background: #d9d9d9; }
-.CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
+.CodeMirror-focused .CodeMirror-selected { background: #076cd2; }
 
 .cm-searching {
   background: #ffa;

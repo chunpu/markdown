@@ -1,0 +1,46 @@
+
+.edit,
+.preview {
+	line-height: 1.4;
+	font-size: 18px;
+	color: #eee;
+}
+
+.edit .cm-header,
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4 {
+	font-size: 30px;
+	font-family: arial;
+	color: rgb(178,34,34);
+	font-weight: bold;
+	padding: 0;
+	margin-bottom: 1.4em;
+	line-height: 42px;
+}
+
+.preview h1 {
+	font-size: 31px;
+}
+
+.preview h2 {
+	font-size: 27px;
+}
+
+.preview h3 {
+	font-size: 23px;	
+}
+
+
+
+.edit .cm-atom,
+.preview blockquote {
+	color: rgb(0, 128, 0);
+}
+
+
+
+.preview p {
+	margin: 1.4em 0;
+}

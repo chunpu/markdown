@@ -1,32 +1,39 @@
 <!doctype html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>markdown edit</title>
-	<link rel="stylesheet" href="css/codemirror.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/preview.css" />
-	<script src="js/codemirror.js"></script>
-	<script src="js/markdown-hl.js"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>MarkdownPad++ Edit</title>
+    <link rel="stylesheet" href="css/codemirror.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/markdown.css">
+    <script src="js/codemirror.js"></script>
+    <script src="js/markdown.js"></script>
 	<script src="js/marked.js"></script>
-	<script src="js/highlight.js"></script>
-	<script src="js/base64.js"></script>
-
-</head>
-<body>
-	<div class="menu" >
+    <style type="text/css">	  
+      
+      .cm-header { font-size: 150%; font-family: arial; }
+      .cm-strong { font-weight: bold; }
+    </style>
+  </head>
+  <body>
+	<div class="header">
+		<div class="menu" >
 		<ul class="menu-list">
 			<li><a href="#" download="_" onclick="genMD(this)">下载markdown</a></li>
 			<li><a href="#" download="_" onclick="genHTML(this)">下载html</a></li>
 			<li><input value="backup1" id="filename"/></li>
 		</ul>
 	</div>
+	</div>
 	<div class="content">
+	xxx
 		<div class="edit">
-			<textarea id="myedit" name="code">
+		
+
+			<textarea id="code" name="code">
 ## 欢迎使用 MarkdownPad++ ##
 
-**MarkdownPad++** 是 基于Web 平台的一个功能完善的 Markdown 编辑器。
+MarkdownPad++是基于Web平台的一个功能完善的 Markdown 编辑器。
 
 ### 专为 Markdown 打造 ###
 
@@ -90,12 +97,13 @@
 ### 为高级用户而设计的稳定的 Markdown 编辑器 ###
 
 有了标签式多文档界面、内置的图片上传、会话管理、拼写检查、自动保存、语法高亮以及内置的 CSS 管理器，您可以随心所欲地使用 MarkdownPad++。
+
 			</textarea>
 		</div>
-		<div id="preview" class="preview markdown">
+		<div class="preview markdown">
 		</div>
-	</div>
-	<script type="template" id="template">
+<script src="js/stack.js"></script>
+<script type="template" id="template">
 <!doctype html>
 <html>
 <head>
@@ -106,49 +114,24 @@
 	mybody
 </body>
 </html>
-	</script>
-
-<script>
-marked.setOptions({
-  gfm: true,
-  tables: true,
-  breaks: false,
-  pedantic: false,
-  sanitize: true,
-  smartLists: true,
-  langPrefix: 'language-',
-  highlight: function(code, lang) {
-  	//console.log( hljs.highlight('js', code).value );
-  	return code;
-  	/*
-  	console.log(lang);
-    if (lang === 'js') {
-
-      return highlighter.javascript(code);
-    }
-    return code;
-    */
-  }
-});
-
-var preview = document.getElementById('preview');
-var myedit = document.getElementById('myedit');
-if ('localStorage' in window && 'last' in window.localStorage) {
-	document.getElementById('myedit').value = window.localStorage[window.localStorage.last];
+</script>
+<script id="script">
+var preview = document.querySelector('.preview');
+var myedit = document.querySelector('#code');
+if (window.localStorage && 'last' in window.localStorage) {
+	myedit.value = window.localStorage[window.localStorage.last];
 }
-var editor = CodeMirror.fromTextArea(myedit, {
-	lineNumbers: true,
-	viewportMargin: Infinity,
-	lineWrapping: true, // 是否自动换行
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+	lineNumbers: false,
+	lineWrapping: true,
+	mode: "markdown"
 });
 preview.innerHTML = marked(editor.getValue());
-editor.on('change', function() {	
-	var text = editor.getValue();
-	text = text.replace(/\s+$/, '');
-	preview.innerHTML = marked(text);
-})
+editor.on('change', refresh);
 </script>
-<script src="js/menu.js"></script>
 <script src="js/key.js"></script>
-</body>
+<script src="js/base64.js"></script>
+<script src="js/key.js"></script>
+	</div>
+  </body>
 </html>

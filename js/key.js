@@ -24,7 +24,7 @@ function genMD(a) {
 }
 
 function genHTML(a) {
-	var text = document.getElementById('preview').innerHTML;
+	var text = document.querySelector('.preview').innerHTML;
 	var template = document.getElementById('template').innerHTML;
 	var name = document.getElementById('filename').value;
 	var html = template.replace(/mytitle/, name).replace(/mybody/, text);;
