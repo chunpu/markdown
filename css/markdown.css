@@ -32,6 +32,10 @@
 	font-size: 23px;	
 }
 
+.preview img {
+	max-width: 95%;
+	overflow: hidden;
+}
 
 
 .edit .cm-atom,
